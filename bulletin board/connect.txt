@@ -1,0 +1,1 @@
+mongodb+srv://ostapczuklukasz:123@noexam.292wyo7.mongodb.net/?retryWrites=true&w=majority&appName=NoExam

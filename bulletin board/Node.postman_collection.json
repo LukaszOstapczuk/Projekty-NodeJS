@@ -1,0 +1,406 @@
+{
+	"info": {
+		"_postman_id": "6e992acd-0d00-42d0-8d34-e82f551126b8",
+		"name": "Node exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "/ads",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "pass1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Sprzedam książki\",\r\n    \"description\": \"Kolekcja książek fantasy, autorzy: Tolkien, Martin, Sanderson.\",\r\n    \"author\": \"Marek Zieliński\",\r\n    \"category\": \"książki\",\r\n    \"tags\": [\"książki\", \"fantasy\", \"kolekcja\"],\r\n    \"price\": 200,\r\n    \"country\": \"Polska\",\r\n    \"deliveryTime\": 4,\r\n    \"extendedInsurance\": \"no\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "badRequest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"1\",\r\n  \"title\": \"\",\r\n  \"description\": \"Rower górski.\",\r\n  \"author\": \"Jan Kowalski\",\r\n  \"category\": \"sport\",\r\n  \"tags\": [],\r\n  \"price\": -100,\r\n  \"country\": \"Poland\",\r\n  \"deliveryTime\": 0,\r\n  \"extendedInsurance\": \"maybe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get",
+			"item": [
+				{
+					"name": "/heartbeat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/heartbeat",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"heartbeat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ads",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "pass3",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Sprzedam rower\",\r\n    \"description\": \"Rower górski, prawie nowy, używany tylko kilka razy.\",\r\n    \"author\": \"Jan Kowalski\",\r\n    \"category\": \"sport\",\r\n    \"tags\": [\"rower\", \"outdoor\", \"górski\"],\r\n    \"price\": 1200,\r\n    \"country\": \"Polska\",\r\n    \"deliveryTime\": 3,\r\n    \"extendedInsurance\": \"yes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHeaders",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain",
+								"type": "default"
+							},
+							{
+								"key": "Accept",
+								"value": "text/html",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/664e3cf76ab8884cc9f7e09a",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"664e3cf76ab8884cc9f7e09a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/search?minPrice=1000&maxPrice=4600",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Używany iPhone 9",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "rower,górski",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "Polska",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "Sport",
+									"disabled": true
+								},
+								{
+									"key": "minPrice",
+									"value": "1000"
+								},
+								{
+									"key": "maxPrice",
+									"value": "4600"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "404 Bad request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/nonexistent",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"nonexistent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "DeleteByID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "pass1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/664e42781a7430f84c5f03c1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"664e42781a7430f84c5f03c1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patch",
+			"item": [
+				{
+					"name": "UpdateAd",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "pass2",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Sprzedam książkę\",\r\n    \"description\": \"Władca pierścieni.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}:{{port}}/ads/664e3da76ab8884cc9f7e09b",
+							"host": [
+								"{{baseURL}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"ads",
+								"664e3da76ab8884cc9f7e09b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
